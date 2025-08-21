@@ -1,23 +1,20 @@
 <div class="container">
-  <h2>:: Photo & Signature Validator ::</h2>
+  <h2>:: Photo & Signature Resizer ::</h2>
 
-  <!-- Sample Images Section -->
-  <div class="sample-container">
-    <div class="sample-image">
-      <h3>Sample Photo</h3>
-      <div class="sample-photo">
-        300 x 300 px
-      </div>
-      <p><small>Max: 100 KB</small></p>
-    </div>
-    <div class="sample-image">
-      <h3>Sample Signature</h3>
-      <div class="sample-signature">
-        300 x 80 px
-      </div>
-      <p><small>Max: 60 KB</small></p>
-    </div>
+  <!-- Description Section -->
+  <div class="description-section">
+    <h3>🇧🇩 BD Govt Exam Photo & Signature Resizer</h3>
+    <p>It resizes and optimizes your <strong>photo</strong> and <strong>signature</strong> according to official requirements without any hassle.</p>
+    <p class="validation-link">
+      <small>
+        📋 For validation check:
+        <a href="http://bpsc.teletalk.com.bd/ncad/imsize.php" target="_blank" rel="noopener noreferrer">
+          BPSC Official Validator
+        </a>
+      </small>
+    </p>
   </div>
+
 
   <!-- Clear All Button -->
   <div class="clear-container" *ngIf="photoPreview || signaturePreview">
@@ -70,4 +67,16 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>
+        Made with ❤️ by
+        <a href="https://www.linkedin.com/in/khaled-jubair/" target="_blank" rel="noopener noreferrer">
+          💼 Khaled Jubair Shihab
+        </a>
+      </p>
+    </div>
+  </footer>
 </div>

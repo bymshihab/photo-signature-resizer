@@ -1,3 +1,9 @@
+/* Global body styling to prevent unnecessary scrolling */
+:host {
+  display: block;
+  overflow-x: hidden;
+}
+
 /* Main container styling */
 .container {
   max-width: 1200px;
@@ -5,9 +11,9 @@
   padding: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-  min-height: 100vh;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
 }
 
 /* Header styling */
@@ -22,6 +28,54 @@ h2 {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   font-size: 1.4em;
+}
+
+/* Description section styling */
+.description-section {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid #e8f5e8;
+}
+
+.description-section h3 {
+  color: #2e7d32;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.description-section p {
+  color: #555;
+  font-size: 1.1em;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.description-section strong {
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.validation-link {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e8f5e8;
+}
+
+.validation-link a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.validation-link a:hover {
+  color: #0d47a1;
+  text-decoration: underline;
 }
 
 /* Upload container for side-by-side layout */
@@ -61,6 +115,8 @@ h2 {
   cursor: pointer;
   transition: all 0.3s ease;
   margin-bottom: 15px;
+  box-sizing: border-box;
+  font-size: 1em;
 }
 
 .file-input:hover {
@@ -77,6 +133,8 @@ h2 {
   cursor: pointer;
   margin-right: 10px;
   font-weight: bold;
+  font-size: 1em;
+  transition: all 0.3s ease;
 }
 
 .file-input::file-selector-button:hover {
@@ -156,50 +214,37 @@ h2 {
   transform: translateY(0);
 }
 
-/* Sample images container */
-.sample-container {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  margin: 30px 0;
-  flex-wrap: wrap;
-}
-
-.sample-image {
+/* Footer styling */
+.footer {
+  margin-top: 40px;
+  padding: 20px 0;
   text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-  border: 2px solid #e0e0e0;
+  border-top: 2px solid #e8f5e8;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 0 0 10px 10px;
 }
 
-.sample-image h3 {
+.footer-content p {
+  margin: 0;
+  color: #555;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+.footer-content a {
   color: #2e7d32;
-  margin-bottom: 15px;
-  font-size: 1.1em;
-}
-
-.sample-photo, .sample-signature {
-  border: 2px solid #4caf50;
-  border-radius: 5px;
-  background: #f5f5f5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #666;
+  text-decoration: none;
   font-weight: bold;
-  position: relative;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.sample-photo {
-  width: 150px;
-  height: 150px;
-}
-
-.sample-signature {
-  width: 150px;
-  height: 40px;
+.footer-content a:hover {
+  color: #1b5e20;
+  text-decoration: underline;
+  transform: translateY(-1px);
 }
 
 /* Responsive design */
@@ -235,6 +280,39 @@ h2 {
     font-size: 1.2em;
     padding: 10px;
   }
+
+  .description-section {
+    padding: 15px;
+    margin: 15px 0;
+  }
+
+  .description-section h3 {
+    font-size: 1.1em;
+  }
+
+  .description-section p {
+    font-size: 1em;
+  }
+
+  .file-input {
+    padding: 12px;
+    font-size: 1em;
+  }
+
+  .file-input::file-selector-button {
+    padding: 10px 14px;
+    font-size: 0.95em;
+    margin-right: 8px;
+  }
+
+  .footer {
+    margin-top: 30px;
+    padding: 15px 0;
+  }
+
+  .footer-content p {
+    font-size: 0.95em;
+  }
 }
 
 @media (max-width: 480px) {
@@ -266,6 +344,33 @@ h2 {
 
   .clear-btn {
     padding: 10px 18px;
+    font-size: 0.9em;
+  }
+
+  .file-input {
+    padding: 15px 10px;
+    font-size: 0.95em;
+    border-width: 2px;
+  }
+
+  .file-input::file-selector-button {
+    padding: 12px 16px;
+    font-size: 0.9em;
+    margin-right: 6px;
+    border-radius: 6px;
+  }
+
+  .upload-section label {
+    font-size: 1em;
+    margin-bottom: 12px;
+  }
+
+  .footer {
+    margin-top: 20px;
+    padding: 12px 0;
+  }
+
+  .footer-content p {
     font-size: 0.9em;
   }
 }

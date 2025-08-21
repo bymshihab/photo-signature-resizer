@@ -1,27 +1,47 @@
-# PhotoSignatureApp
+# 🇧🇩 BD Govt Exam Photo & Signature Resizer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.19.
+A **single-page Angular 18 application** built for candidates applying to Bangladeshi Government exams.  
+It resizes and optimizes your **photo** and **signature** according to official requirements without any hassle.  
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📏 Official Requirements (Bangladesh Govt Exams)
 
-## Code scaffolding
+- **Photo**
+  - Size: `300 x 300` pixels (Width x Height)
+  - File Size: ≤ **100 KB**
+  - Must be **color** photo
+  - ❌ Black & White, Monochrome, Grayscale, or any non-photo image will be **rejected**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Signature**
+  - Size: `300 x 80` pixels (Width x Height)
+  - File Size: ≤ **60 KB**
 
-## Build
+- This application can detect image with **Facial Recognition**  
+  👉 Please avoid uploading unacceptable photos.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## 🚀 Features
+- Upload **Photo & Signature**
+- Automatically resized to required pixel dimensions
+- Compresses to required file size (≤100KB for photo, ≤60KB for signature)
+- Instant preview before download
+- Download resized JPG image
+- Works completely **offline** (no backend needed)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🛠️ Tech Stack
+- Angular 18
+- TypeScript
+- HTML5 Canvas API
+- CSS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 📦 Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Create project with Angular 18:
+   ```bash
+   npx @angular/cli@18 new bd-exam-photo-signature-resizer
