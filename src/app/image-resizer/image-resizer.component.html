@@ -1,0 +1,73 @@
+<div class="container">
+  <h2>:: Photo & Signature Validator ::</h2>
+
+  <!-- Sample Images Section -->
+  <div class="sample-container">
+    <div class="sample-image">
+      <h3>Sample Photo</h3>
+      <div class="sample-photo">
+        300 x 300 px
+      </div>
+      <p><small>Max: 100 KB</small></p>
+    </div>
+    <div class="sample-image">
+      <h3>Sample Signature</h3>
+      <div class="sample-signature">
+        300 x 80 px
+      </div>
+      <p><small>Max: 60 KB</small></p>
+    </div>
+  </div>
+
+  <!-- Clear All Button -->
+  <div class="clear-container" *ngIf="photoPreview || signaturePreview">
+    <button (click)="clearAll()" class="clear-btn">
+      🗑️ Clear All
+    </button>
+  </div>
+
+  <!-- Upload Sections Side by Side -->
+  <div class="upload-container">
+    <!-- Photo Upload Section -->
+    <div class="upload-section">
+      <label>📷 Upload Photo (300x300 pixels)</label>
+      <input
+        type="file"
+        accept="image/*"
+        (change)="onFileChange($event, 'photo')"
+        class="file-input"
+      />
+      <div *ngIf="photoPreview" class="preview">
+        <img [src]="photoPreview" alt="Photo" width="300" height="300" />
+        <br />
+        <button
+          (click)="downloadImage(photoPreview!, 'photo-300x300.jpg')"
+          class="download-btn"
+        >
+          📥 Download Photo
+        </button>
+      </div>
+    </div>
+
+    <!-- Signature Upload Section -->
+    <div class="upload-section">
+      <label>✍️ Upload Signature (300x80 pixels)</label>
+      <input
+        type="file"
+        accept="image/*"
+        (change)="onFileChange($event, 'signature')"
+        class="file-input"
+      />
+      <div *ngIf="signaturePreview" class="preview">
+        <img [src]="signaturePreview" alt="Signature" width="300" height="80" />
+        <br />
+        <button
+          (click)="downloadImage(signaturePreview!, 'signature-300x80.jpg')"
+          class="download-btn"
+        >
+          📥 Download Signature
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
