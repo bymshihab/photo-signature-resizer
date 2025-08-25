@@ -1,8 +1,10 @@
 # 🇧🇩 BD Govt Exam Photo & Signature Resizer
 
 A **single-page Angular 18 application** built for candidates applying to Bangladeshi Government exams.  
-It resizes and optimizes your **photo** and **signature** according to official requirements without any hassle.  
+It resizes and optimizes your **photo** and **signature** according to official requirements without any hassle.
 
+---
+![image alt](https://github.com/bymshihab/photo-signature-resizer/blob/5f60dc498a16e4b47b176e76f823979699536fbb/537807605_4182583988682952_1308281738531510381_n.jpg)
 ---
 
 ## 📏 Official Requirements (Bangladesh Govt Exams)
