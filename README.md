@@ -42,8 +42,31 @@ It resizes and optimizes your **photo** and **signature** according to official 
 
 ---
 
-## 📦 Installation
+📦 How to Run This Project
 
-1. Create project with Angular 18:
-   ```bash
-   npx @angular/cli@18 new bd-exam-photo-signature-resizer
+1. Clone the repository
+```
+git clone https://github.com/bymshihab/photo-signature-resizer.git
+```
+
+2. Navigate into the project folder
+
+```
+cd photo-signature-resizer
+```
+
+3. Install dependencies
+```
+npm install
+```
+
+4. Start the development server
+```
+ng serve
+```
+
+or
+
+npm start
+```
+Open your browser and go to 👉 http://localhost:4200/
