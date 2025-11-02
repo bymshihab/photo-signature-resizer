@@ -23,9 +23,11 @@ export class AppComponent {
   }
 
   openInBrowser() {
-    // Show alert first, then redirect when user clicks OK
-    if (confirm('This will open the app in your default browser for full functionality. Continue?')) {
-      window.open('https://photo-signature-resizer.vercel.app/', '_blank');
+    // For Facebook in-app browser, we need to use location.href to exit Facebook environment
+    // This will prompt the user to open in their default browser
+    if (confirm('This will open the app in your device\'s default browser (Chrome, Safari, etc.) for full functionality. Continue?')) {
+      // Force exit from Facebook by using location.href instead of window.open
+      window.location.href = 'https://photo-signature-resizer.vercel.app/';
     }
   }
 }
