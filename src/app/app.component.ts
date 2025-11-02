@@ -24,4 +24,8 @@ export class AppComponent {
     const ua = navigator.userAgent || navigator.vendor || (window as any)['opera'];
     return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
   }
+
+  openInBrowser() {
+    window.location.href = 'https://photo-signature-resizer.vercel.app/';
+  }
 }
