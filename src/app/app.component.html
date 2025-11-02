@@ -1,1 +1,6 @@
 <app-image-resizer></app-image-resizer>
+<div *ngIf="isFacebookApp()" class="fb-warning">
+  Please open this app in Chrome or Safari for full functionality.
+  <a [href]="'https://photo-signature-resizer.vercel.app/'" target="_blank">Open in browser</a>
+</div>
+
