@@ -2,7 +2,26 @@
   <div class="warning-content">
     <h3>⚠️ Limited Functionality in Facebook Browser</h3>
     <p>To use all features (file upload, download, face detection), please open this app in Chrome, Safari, or your device's default browser.</p>
-    <button (click)="openInBrowser()" class="open-browser-btn">🚀 Exit to Browser</button>
+
+    <div class="url-section">
+      <div class="url-display">
+        <span class="url-text">{{ appUrl }}</span>
+      </div>
+
+      <div class="button-group">
+        <button (click)="copyToClipboard()" class="copy-btn">
+          <span *ngIf="!copySuccess">📋 Copy URL</span>
+          <span *ngIf="copySuccess">✅ Copied!</span>
+        </button>
+        <button (click)="openInBrowser()" class="open-browser-btn">🚀 Try to Open</button>
+      </div>
+
+      <p class="instructions">
+        1. Copy the URL above<br>
+        2. Open Chrome/Safari manually<br>
+        3. Paste and go to the URL
+      </p>
+    </div>
   </div>
 </div>
 

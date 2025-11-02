@@ -11,6 +11,8 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'photo-signature-app';
+  appUrl = 'https://photo-signature-resizer.vercel.app/';
+  copySuccess = false;
 
   ngOnInit() {
     // Just detect Facebook app, don't redirect automatically
@@ -22,12 +24,52 @@ export class AppComponent {
     return (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1);
   }
 
-  openInBrowser() {
-    // For Facebook in-app browser, we need to use location.href to exit Facebook environment
-    // This will prompt the user to open in their default browser
-    if (confirm('This will open the app in your device\'s default browser (Chrome, Safari, etc.) for full functionality. Continue?')) {
-      // Force exit from Facebook by using location.href instead of window.open
-      window.location.href = 'https://photo-signature-resizer.vercel.app/';
+  async copyToClipboard() {
+    try {
+      await navigator.clipboard.writeText(this.appUrl);
+      this.copySuccess = true;
+
+      // Reset the success message after 3 seconds
+      setTimeout(() => {
+        this.copySuccess = false;
+      }, 3000);
+
+    } catch (err) {
+      // Fallback for older browsers
+      this.fallbackCopyTextToClipboard(this.appUrl);
     }
+  }
+
+  fallbackCopyTextToClipboard(text: string) {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+
+    // Avoid scrolling to bottom
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    try {
+      document.execCommand('copy');
+      this.copySuccess = true;
+
+      setTimeout(() => {
+        this.copySuccess = false;
+      }, 3000);
+
+    } catch (err) {
+      console.error('Fallback: Could not copy text: ', err);
+    }
+
+    document.body.removeChild(textArea);
+  }
+
+  openInBrowser() {
+    // Try to open in browser (may not work in Facebook)
+    window.location.href = this.appUrl;
   }
 }
