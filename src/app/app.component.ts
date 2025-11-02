@@ -11,7 +11,9 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'photo-signature-app';
-  appUrl = 'https://photo-signature-resizer.vercel.app/';
+  // appUrl = 'https://photo-signature-resizer.vercel.app/';
+  appUrl = 'https://leetcode.com/u/khaledshihab221/';
+
   copySuccess = false;
 
   ngOnInit() {
