@@ -13,11 +13,8 @@ export class AppComponent {
   title = 'photo-signature-app';
 
   ngOnInit() {
-    if (this.isFacebookApp()) {
-      // Redirect to open in default browser
-      window.location.href = 'https://your-app-url.com';
-      alert('Please open this app in a browser like Chrome or Safari for full functionality.');
-    }
+    // Just detect Facebook app, don't redirect automatically
+    // The warning will be shown in the template
   }
 
   isFacebookApp(): boolean {
@@ -26,6 +23,9 @@ export class AppComponent {
   }
 
   openInBrowser() {
-    window.location.href = 'https://photo-signature-resizer.vercel.app/';
+    // Show alert first, then redirect when user clicks OK
+    if (confirm('This will open the app in your default browser for full functionality. Continue?')) {
+      window.open('https://photo-signature-resizer.vercel.app/', '_blank');
+    }
   }
 }
